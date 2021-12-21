@@ -13,26 +13,18 @@ const ProductDetail = () => {
     const dispatch = useDispatch();
     const [loader, setLoader] = useState(false);
 
-    const fetchProductDetail = async() => {
-        const response = await Axios.get(`https://fakestoreapi.com/products/${productId}`)
-        .catch((err) => {
-            console.log("Error: ", err)
-        });
-        dispatch(selectedProduct(response.data));
+    const fetchProductDetail = () => {
+        setLoader(true);
+        Axios.get(`https://fakestoreapi.com/products/${productId}`)
+            .then((response) => {
+                console.log("res: ", response);
+                setLoader(false);
+                dispatch(selectedProduct(response.data));
+            })
+            .catch((err) => {
+                console.log("Error: ", err)
+            })
     }
-
-    // const fetchProductDetail = () => {
-    //     setLoader(true);
-    //     Axios.get()
-    //         .then((response) => {
-    //             console.log("res: ", response);
-    //             setLoader(false);
-    //             dispatch(selectedProduct(response.data));
-    //         })
-    //         .catch((err) => {
-    //             console.log("Error: ", err)
-    //         })
-    // }
 
     useEffect(() => {
         if (productId) {
