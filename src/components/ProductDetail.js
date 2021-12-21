@@ -31,7 +31,6 @@ const ProductDetail = () => {
             fetchProductDetail();
             return dispatch(removeSelectedProduct());
         }
-        //eslint-disable-next-line
     }, [productId])
     return (
         <div className="container mt-5 pt-5">
