@@ -4,43 +4,37 @@ import { setProducts } from '../redux/actions/productActions';
 import Axios from 'axios';
 import '../../src/App.css'
 import ProductComponent from '../components/ProductComponent'
+import Loader from './Loader';
 
 const ProductListing = () => {
     const dispatch = useDispatch();
-    const [ loader, setLoader ] = useState(false);
-    const [ res, setRes ] = useState([])
+    const [loader, setLoader] = useState(false);
 
-    const fetchProducts = async() => {
+    const fetchProducts = () => {
         setLoader(true);
-        const response = await Axios.get("https://fakestoreapi.com/products")
-        .catch((err) => {
-            console.log("Error: ", err)
-        })
-        setLoader(false);
-        dispatch(setProducts(response.data));
+        Axios.get("https://fakestoreapi.com/products")
+            .then((response) => {
+                console.log("res: ", response);
+                setLoader(false);
+                dispatch(setProducts(response.data));
+            })
+            .catch((err) => {
+                console.log("Error: ", err)
+            })
     }
-
-    // const fetchProducts = () => {
-    //     setLoader(true);
-    //     Axios.get("https://fakestoreapi.com/products")
-    //     .then((response) => {
-    //         console.log("res: ", response);
-    //         setRes(response.data);
-    //         setLoader(false);
-    //     })
-    //     .catch((err) => {
-    //         console.log("Error: ", err)
-    //     })
-    //     dispatch(setProducts(res));
-    // }
 
     useEffect(() => {
         fetchProducts();
+
+        //eslint-disable-next-line
     }, []);
 
     return (
-        <div className="full-block" style={{marginTop: '50px'}}>
-            <ProductComponent loader={loader} />
+        <div className="full-block" style={{ marginTop: '50px' }}>
+            {
+                loader ? <Loader /> : 
+                <ProductComponent />
+            }
         </div>
     )
 }
