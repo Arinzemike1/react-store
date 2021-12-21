@@ -1,0 +1,168 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.store {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 18.66rem;
+  margin: 0 .5rem 2.3rem .5rem;
+  background-color: #fbfbfb;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,-0.17);
+  border-radius: 7px;
+  padding: 20px;
+  text-decoration: none;
+  transition: all 0.5s ease;
+}
+.store:hover {
+  background-position: left;
+  transform: scale(1.02);
+}
+.content-2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.full-block {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 4.4rem 10%;
+}
+.red-color {
+  color: #7e0a6f;
+  font-weight: 600;
+}
+.category {
+  text-transform: uppercase;
+  background-color: #9999993b;
+  padding: 5px;
+  width: 140px;
+  font-size: 10px;
+  color: #666;
+}
+.title {
+  color: #666;
+}
+.image-container {
+  border: 1px solid #dbd3d3;
+  padding: 40px 20px;
+}
+.image-size {
+  height: 500px;
+  width: auto;
+}
+.description {
+  color: #6a6767;
+  font-family: 'Poppins', sans-serif;
+  width: 70%;
+  margin-bottom: 50px;
+  font-size: 16px;
+}
+.price-tag {
+  font-size: 15px !important;
+  margin-bottom: 20px !important;
+}
+.add-to-cart-btn {
+  border: none;
+  padding: 10px 35px;
+  border-radius: 20px;
+  background-color: #000;
+}
+.skeleton {
+  animation: skeleton-loading 1s linear infinite alternate;
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-color: hsl(200, 20%, 70%);
+  }
+
+  100% {
+    background-color: hsl(200, 20%, 95%);
+  }
+}
+.wrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.text {
+  color: #37a1a7;
+  display: inline-block;
+  margin-left: 5px;
+  font-size: 25px;
+}
+
+.bounceball {
+  position: relative;
+  display: inline-block;
+  height: 37px;
+  width: 15px;
+}
+.bounceball::before {
+  position: absolute;
+  content: '';
+  display: block;
+  top: 0;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #37a1a7;
+  transform-origin: 50%;
+  animation: bounce 500ms alternate infinite ease;
+}
+
+@keyframes bounce {
+  0% {
+    top: 30px;
+    height: 5px;
+    border-radius: 60px 60px 20px 20px;
+    transform: scaleX(2);
+  }
+  35% {
+    height: 15px;
+    border-radius: 50%;
+    transform: scaleX(1);
+  }
+  100% {
+    top: 0;
+  }
+}
