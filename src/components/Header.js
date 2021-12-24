@@ -1,11 +1,9 @@
 import React from 'react'
 
-const Header = () => {
+const Header = ({ className }) => {
     return (
-        <div className="">
-            <div className="">
-                <h2>Instant Buy</h2>
-            </div>
+        <div className="App-header">
+            <h2 className={className}>Instant Buy</h2>
         </div>
     )
 }

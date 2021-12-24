@@ -17,7 +17,6 @@ const ProductDetail = () => {
         setLoader(true);
         Axios.get(`https://fakestoreapi.com/products/${productId}`)
             .then((response) => {
-                console.log("res: ", response);
                 setLoader(false);
                 dispatch(selectedProduct(response.data));
             })
