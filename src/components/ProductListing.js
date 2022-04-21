@@ -38,24 +38,24 @@ const ProductListing = () => {
 
     return (
         <>
-        <div className="row mt-4">
-            <div className="col">
-                <Header className="ms-5" />
-            </div>
-            <div className="col">
-            <form>
-                <div className="search">
-                    <AiOutlineSearch className="search-icon" />
-                    <input type="text" className="search-bar" placeholder="Search..." onChange={handleChange} />
+            <div className="row mt-4">
+                <div className="col">
+                    <Header className="ms-5" />
                 </div>
-            </form>
+                <div className="col">
+                    <form>
+                        <div className="search">
+                            <AiOutlineSearch className="search-icon" />
+                            <input type="text" className="search-bar" placeholder="Search..." onChange={handleChange} />
+                        </div>
+                    </form>
+                </div>
+                <div className="col d-flex justify-content-end me-5" style={{ fontSize: '30px' }}>
+                    <Link to="">
+                        <AiOutlineShoppingCart className="cart-icon" />
+                    </Link>
+                </div>
             </div>
-            <div className="col d-flex justify-content-end me-5" style={{ fontSize: '30px' }}>
-                <Link to="">
-                    <AiOutlineShoppingCart className="cart-icon" />
-                </Link>
-            </div>
-        </div>
             <div className="full-block" style={{ marginTop: '50px' }}>
                 {
                     loader ? <Loader /> :

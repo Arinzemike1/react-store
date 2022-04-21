@@ -49,7 +49,7 @@ const ProductDetail = () => {
                             </h2>
                             <p className="category mb-5">{category}</p>
                             <p className="description">{description}</p>
-                            <button className="add-to-cart-btn text-white">Add to Cart</button>
+                            {/* <button className="add-to-cart-btn text-white">Add to Cart</button> */}
                         </div>
                     </div>
             }

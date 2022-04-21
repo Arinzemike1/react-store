@@ -30,9 +30,9 @@ const ProductComponent = ({ searchTerm }) => {
                             <div className="col">
                                 <div className="category">{category}</div>
                             </div>
-                            <div className="col">
+                            {/* <div className="col">
                                 <button className="atc-btn">Add to Cart</button>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
 
